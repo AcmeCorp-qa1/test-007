@@ -1,13 +1,13 @@
 env:
-  docker_tag: schalla/test:depscan-qa-0.0.9
- 
-# This is a basic workflow to help you get started with GitHub Actions 
-name: Scan code using fd code scanner 
+  docker_tag: schalla/test:depscan-dev-0.0.9
 
-#  Triggers the workflow on push events but only for the development branch
+# This is a basic workflow to help you get started with GitHub Actions 
+name: Scan code using fd code scanner
+
+# Triggers the workflow on push events but only for the development branch
 on:
-  push: 
-    branches: [ "main" ]
+  push:
+    branches: [ "main","develop" ]
     
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -33,12 +33,13 @@ jobs:
           -e GITHUB_REPOSITORY_OWNER_ID="${{github.repository_owner_id}}" \
           -e GITHUB_REPOSITORY="${{github.repository}}" \
           -e GITHUB_REPOSITORY_ID="${{github.repository_id}}" \
-          -e GITHUB_BASE_REF="${{github.base_ref}}" \
+          -e GITHUB_REF="${{github.ref}}" \
           -e GITHUB_EVENT_NAME="${{github.event_name}}" \
           -e GITHUB_ACTOR="${{github.actor}}" \
           -e GITHUB_ACTOR_ID="${{github.actor_id}}" \
           -e FD_API_KEY="${{secrets.FD_API_KEY}}" \
           -e GITHUB_TOKEN="${{github.token}}" \
+          -e GITHUB_SHA="${{github.sha}}" \
           -e WORKSPACE_PATH="/src" \
           -e LOG_LEVEL="debug" \
           -v "${{ github.workspace }}":/src  "${{env.docker_tag}}"
