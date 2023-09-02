@@ -1,13 +1,14 @@
 env:
-  docker_tag: schalla/test:qa-0.0.12
+  docker_tag: schalla/test:depscan-qa-0.0.9
  
 # This is a basic workflow to help you get started with GitHub Actions 
-name: DuckDefender
+name: Scan code using fd code scanner 
 
-# Triggers the workflow on push events but only for the development branch
+#  Triggers the workflow on push events but only for the development branch
 on:
-  push:
-    branches: [ "main", "develop" ]
+  push: 
+    branches: [ "main" ]
+    
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -20,24 +21,24 @@ jobs:
 
     # Download image from docker hub
 
-    - name: Download latest DuckDefender
+    - name: Download docker image
       run: docker pull "${{env.docker_tag}}"
 
-    - name: Run DuckDefender
+    - name : check git status
+      run: pwd; git rev-list --all
+        
+    - name: docker scan
       run: |
         docker run -e GITHUB_REPOSITORY_OWNER="${{github.repository_owner}}" \
           -e GITHUB_REPOSITORY_OWNER_ID="${{github.repository_owner_id}}" \
           -e GITHUB_REPOSITORY="${{github.repository}}" \
           -e GITHUB_REPOSITORY_ID="${{github.repository_id}}" \
+          -e GITHUB_BASE_REF="${{github.base_ref}}" \
           -e GITHUB_EVENT_NAME="${{github.event_name}}" \
           -e GITHUB_ACTOR="${{github.actor}}" \
           -e GITHUB_ACTOR_ID="${{github.actor_id}}" \
           -e FD_API_KEY="${{secrets.FD_API_KEY}}" \
           -e GITHUB_TOKEN="${{github.token}}" \
-          -e GITHUB_HEAD_REF="${{github.head_ref}}" \
-          -e GITHUB_BASE_REF="${{github.base_ref}}" \
-          -e GITHUB_REF="${{github.ref}}" \
-          -e GITHUB_SHA="${{github.sha}}" \
           -e WORKSPACE_PATH="/src" \
           -e LOG_LEVEL="debug" \
           -v "${{ github.workspace }}":/src  "${{env.docker_tag}}"
