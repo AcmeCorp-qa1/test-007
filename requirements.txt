@@ -24,3 +24,4 @@ kiwitcms==11.6.0
 railguns==0.63.0
 
 
+django==4.1.3
