@@ -12,6 +12,7 @@ kafka-python==2.0.2
 requests==2.28.1
 sphinx==1.8.2
 
+
 alastria-auth==0.0.10
 django-ledger==0.5.2.10
 djongo-lndata==2.0.2
