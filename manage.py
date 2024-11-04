@@ -7,6 +7,16 @@ print("this is test-09 folder")
 
 
 
+# from django.forms import ImageField as i
+from django import forms
+
+class ImageUploadForm(forms.Form):
+    image = forms.ImageField(label='Choose an image')
+
+    def clean_image(self):
+        image = self.cleaned_data['image']
+        image.save('a') 
+        return image
 
 
 # views.py
