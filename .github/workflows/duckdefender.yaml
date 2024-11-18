@@ -7,7 +7,7 @@ name: Scan code using fd code scanner
 # Triggers the workflow on push events but only for the development branch
 on:
   push:
-    branches: [main1, develop, release]
+    branches: [main, develop, release]
 
   
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -30,6 +30,7 @@ jobs:
     - name: docker scan
       run: |
         docker run -e GITHUB_REPOSITORY_OWNER="${{github.repository_owner}}" \
+          -e EXIT_ON_ERROR=true \
           -e GITHUB_REPOSITORY_OWNER_ID="${{github.repository_owner_id}}" \
           -e GITHUB_REPOSITORY="${{github.repository}}" \
           -e GITHUB_REPOSITORY_ID="${{github.repository_id}}" \
