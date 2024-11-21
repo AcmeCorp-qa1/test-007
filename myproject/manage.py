@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from django.utils.encoding import uri_to_iri
 
 
 def main():
