@@ -1,5 +1,5 @@
 fail-build-on: 
-  sast:
+  secrets:
     - critical
     - high
     - medium
