@@ -1,6 +1,0 @@
-fail-build-on: 
-  secrets:
-    - critical
-    - high
-    - medium
-    - low
