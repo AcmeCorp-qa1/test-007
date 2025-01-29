@@ -2,4 +2,4 @@
 # langchain>=0.0.212
 # pydantic
 # BeautifulSoup4
-django==4.3.1
+django==4.1.3
