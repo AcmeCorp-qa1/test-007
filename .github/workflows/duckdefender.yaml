@@ -1,6 +1,6 @@
 env:
   docker_tag: schalla/duckdefender-v2:qa-latest
-  
+     
 # This is a basic workflow to help you get started with GitHub Actions 
 name: Scan code using fd code scanner
 
