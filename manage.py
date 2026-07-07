@@ -4,6 +4,8 @@ from django import forms
 from django.utils.encoding import uri_to_iri
 from django.utils.text import Truncator
 
+
+
 # Set up Django environment
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myproject.settings')  # Replace 'your_project.settings' with your settings module
 django.setup()
