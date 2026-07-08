@@ -10,9 +10,6 @@ import xml.etree.ElementTree as ET
 from urllib.parse import unquote
 
 
-
-
-
 app = Flask(__name__)
 
 # --- Hardcoded secrets (CWE-798) ---
