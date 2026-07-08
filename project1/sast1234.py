@@ -2,6 +2,9 @@ from flask import Flask, render_template, request, redirect, url_for, session, s
 import sqlite3
 import os
  
+
+# ghp_abc123def456ghi789jkl012mno345pqr678
+
 app = Flask(__name__)
 app.secret_key = 'vulnerable_secret_key'
 UPLOAD_FOLDER = 'uploads'
@@ -42,7 +45,7 @@ def login():
             return "Invalid credentials", 401
     return render_template('login.html')
     
- 
+ # ghp_abc123def456ghi789jkl012mno345pqr678
  
 # Vulnerable Dashboard with IDOR and XSS
 @app.route('/dashboard')
