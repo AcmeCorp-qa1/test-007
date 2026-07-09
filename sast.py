@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.secret_key = 'vulnerable_secret_key'
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-# ghp_abc123def456ghi789jkl012mno345pqr678
+# ghp_abc123def456ghi789jkl012mno345pqrnb678
 # Initialize database with users and posts 
 
 def init_db():
