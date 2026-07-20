@@ -86,6 +86,7 @@ def upload_file():
     return render_template('upload.html')
 # email@gmail.com
 # Insecure Direct Object Reference (IDOR)
+# ghp_abc123def456ghi789jkl012mno345pqr895
 
 @app.route('/view_post/<int:post_id>')
 def view_post(post_id):
