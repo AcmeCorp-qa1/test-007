@@ -87,7 +87,7 @@ def upload_file():
 # Insecure Direct Object Reference (IDOR)
 
 @app.route('/view_post/<int:post_id>')
-# def view_post(post_id):
+def view_post(post_id):
     conn = get_db_connection()
     post = conn.execute(f"SELECT * FROM posts WHERE id = {post_id}").fetchone()  # IDOR vulnerability
     if post:
