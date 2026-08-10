@@ -19,6 +19,7 @@ requests==2.22.0           # CVE-2018-18074 fixed in 2.20.1+; kept here only as
                            # for the actual CVE-bearing pins in this file
 
 
+
 # urllib3 intentionally left UNPINNED — it's a transitive dependency of both
 # requests and botocore. Leaving it unpinned lets pip/uv choose a single
 # version that satisfies both ranges (see conflict note at bottom).
