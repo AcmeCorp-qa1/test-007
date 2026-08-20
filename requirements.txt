@@ -30,7 +30,7 @@ requests==2.22.0           # CVE-2018-18074 fixed in 2.20.1+; kept here only as
 # version that satisfies both ranges (see conflict note at bottom).
 Jinja2==2.10.1             # CVE-2019-10906  - Sandbox escape via str.format
 Flask==0.12.2              # CVE-2018-1000656 - DoS via crafted JSON payload
-Django==2.2.27             # CVE-2022-28346  - SQL injection via QuerySet.explain()
+Django==4.1.3             # CVE-2022-28346  - SQL injection via QuerySet.explain() 2.2.27
 Werkzeug==0.15.4           # CVE-2019-14806  - Weak salt generation in debugger
 
 # --- Parsing / serialization -------------------------------------------------
