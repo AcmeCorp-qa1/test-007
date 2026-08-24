@@ -1,1 +1,2 @@
 pull request suite — synchronize commit 2026-08-21T11:07:01.171Z
+PyYAML==5.1
