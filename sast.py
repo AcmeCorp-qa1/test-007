@@ -10,6 +10,10 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # Initialize database with users and posts 
 
 
+
+
+
+
 def init_db():
     conn = sqlite3.connect('database.db')
     conn.execute('''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, password TEXT)''')
