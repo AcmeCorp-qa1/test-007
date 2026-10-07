@@ -10,12 +10,12 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # Initialize database with users and posts 
 
 
+
 def init_db():
     conn = sqlite3.connect('database.db')
     conn.execute('''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, password TEXT)''')
     conn.execute('''CREATE TABLE IF NOT EXISTS posts (id INTEGER PRIMARY KEY, user_id INTEGER, title TEXT, content TEXT)''')
     conn.close()
-
 
 
 def get_db_connection():
@@ -88,6 +88,7 @@ def upload_file():
     return render_template('upload.html')
 # email@gmail.com
 # Insecure Direct Object Reference (IDOR)
+# ghp_abc123def456ghi789jkl012mno345pqr895
 
 @app.route('/view_post/<int:post_id>')
 def view_post(post_id):
